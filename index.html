@@ -150,11 +150,11 @@ select:focus, input[type=date]:focus { border-color: var(--green-light); }
     <div class="sidebar-dash">Meta Ads Dashboard</div>
   </div>
   <nav class="sidebar-nav">
-    <div class="nav-item active" onclick="scrollTo('sec-overview')"><span>📊</span> Campaign Overview</div>
-    <div class="nav-item" onclick="scrollTo('sec-audience')"><span>👥</span> Audience Report</div>
-    <div class="nav-item" onclick="scrollTo('sec-creative')"><span>🎨</span> Creative Report</div>
-    <div class="nav-item" onclick="scrollTo('sec-product')"><span>📦</span> Product Report</div>
-    <div class="nav-item" onclick="scrollTo('sec-heatmap')"><span>🌡</span> Heatmap</div>
+    <div class="nav-item active" onclick="navTo('sec-overview')"><span>📊</span> Campaign Overview</div>
+    <div class="nav-item" onclick="navTo('sec-audience')"><span>👥</span> Audience Report</div>
+    <div class="nav-item" onclick="navTo('sec-creative')"><span>🎨</span> Creative Report</div>
+    <div class="nav-item" onclick="navTo('sec-product')"><span>📦</span> Product Report</div>
+    <div class="nav-item" onclick="navTo('sec-heatmap')"><span>🌡</span> Heatmap</div>
   </nav>
   <div class="sidebar-footer" id="lastUpdate">–</div>
 </div>
@@ -317,7 +317,7 @@ let trendMetric       = 'spend';
 let heatmapMode       = 'ctr'; // 'ctr' | 'cpm'
 
 // ── SIDEBAR NAV ─────────────────────────────────────
-function scrollTo(id) {
+function navTo(id) {
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
   const map = {'sec-overview':0,'sec-audience':1,'sec-creative':2,'sec-product':3,'sec-heatmap':4};
